@@ -5,8 +5,8 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.4</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>2.7.2</version>
+		<!--<relativePath/> --><!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cos</groupId>
 	<artifactId>blog</artifactId>
@@ -21,10 +21,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-     <!--<dependency>
+       <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>-->
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -39,6 +39,7 @@
 		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
+			<version>8.0.32</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
@@ -59,10 +60,10 @@
 		
 		<!-- 시큐리티 태그 라이브러리 -->
 		
-		<!--<dependency>
+		<dependency>
 		  <groupId>org.springframework.security</groupId>
 		  <artifactId>spring-security-taglibs</artifactId>
-		</dependency>-->
+		</dependency>
 		
 		<!-- JSP 템플릿 엔진 -->
 		<dependency>
@@ -70,12 +71,38 @@
 		  <artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
 		
-		<!-- JSTL -->
+		<!-- 스프링부트 3.0 미만 버전-->
 		<dependency>
-		  <groupId>javax.servlet</groupId>
-		  <artifactId>jstl</artifactId>
-		  <version>1.2</version>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>jstl</artifactId>
+		    <version>1.2</version>
 		</dependency>
+	
+	<!-- 스프링부트 3.0 이상 버전-->	
+	<!--	 JSTL 
+		 jstl 
+		 https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api 
+
+		<dependency>
+			<groupId>jakarta.servlet.jsp.jstl</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
+		 https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api 
+		<dependency>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+			<version>6.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		 https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl 
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
+			<version>3.0.1</version>
+		</dependency>-->
 		
 	</dependencies>
 

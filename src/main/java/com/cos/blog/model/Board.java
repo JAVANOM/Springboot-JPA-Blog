@@ -3,19 +3,20 @@ package com.cos.blog.model;
 import java.sql.Timestamp;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Lob;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -38,7 +39,6 @@ public class Board {
 	@Lob //대용량 데이터
 	private String content; // 썸머노트 라이브러리 사용 -> 디자인 <html> 태그가 섞여서 디자인
 	
-	@ColumnDefault("0")
 	private int count; // 조회수
 	
 	@ManyToOne(fetch = FetchType.EAGER) // Many = Board, User = One 한 명의 유저가 여러개의 개시글을 사용  // 기본이 즉시 로딩 EAGER, 항상 조인을 통해 가지고 옮
